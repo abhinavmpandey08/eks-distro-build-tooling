@@ -25,6 +25,10 @@ spec:
   replicas: 1
   template:
     metadata:
+      annotations:
+        prometheus.io/path: /metrics
+        prometheus.io/port: "9090"
+        prometheus.io/scrape: {{ .Values.sinker.scrape_metrics }}
       labels:
         app: sinker
     spec:

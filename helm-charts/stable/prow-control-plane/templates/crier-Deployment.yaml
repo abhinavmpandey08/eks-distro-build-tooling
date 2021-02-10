@@ -25,6 +25,10 @@ spec:
       app: crier
   template:
     metadata:
+      annotations:
+        prometheus.io/path: /metrics
+        prometheus.io/port: "9090"
+        prometheus.io/scrape: {{ .Values.crier.scrape_metrics }}
       labels:
         app: crier
     spec:
