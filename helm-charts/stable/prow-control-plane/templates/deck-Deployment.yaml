@@ -30,6 +30,10 @@ spec:
       app: deck
   template:
     metadata:
+      annotations:
+        prometheus.io/path: /metrics
+        prometheus.io/port: "9090"
+        prometheus.io/scrape: {{ .Values.deck.scrape_metrics }}
       labels:
         app: deck
     spec:

@@ -27,6 +27,10 @@ spec:
       app: tide
   template:
     metadata:
+      annotations:
+        prometheus.io/path: /metrics
+        prometheus.io/port: "9090"
+        prometheus.io/scrape: {{ .Values.tide.scrape_metrics }}
       labels:
         app: tide
     spec:

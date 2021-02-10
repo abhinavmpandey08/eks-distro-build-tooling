@@ -30,6 +30,10 @@ spec:
       app: hook
   template:
     metadata:
+      annotations:
+        prometheus.io/path: /metrics
+        prometheus.io/port: "9090"
+        prometheus.io/scrape: {{ .Values.hook.scrape_metrics }}
       labels:
         app: hook
     spec:

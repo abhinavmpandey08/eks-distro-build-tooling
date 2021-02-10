@@ -25,6 +25,10 @@ spec:
       app: statusreconciler
   template:
     metadata:
+      annotations:
+        prometheus.io/path: /metrics
+        prometheus.io/port: "9090"
+        prometheus.io/scrape: {{ .Values.statusreconciler.scrape_metrics }}
       labels:
         app: statusreconciler
     spec:
