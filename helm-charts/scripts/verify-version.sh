@@ -20,7 +20,7 @@ CHARTS_DIR=$1
 
 GIT_REPO_ROOT=$(git rev-parse --show-toplevel)
 REMOTE_URL="https://github.com/abhinavmpandey08/eks-distro-build-tooling.git"
-
+echo $(git rev-parse HEAD)
 # PULL_PULL_SHA is environment variable set by the presubmit job. More info here: https://github.com/kubernetes/test-infra/blob/master/prow/jobs.md#job-environment-variables
 PREV_RELEASE_HASH=${PULL_BASE_SHA}
 git fetch $REMOTE_URL $PREV_RELEASE_HASH
